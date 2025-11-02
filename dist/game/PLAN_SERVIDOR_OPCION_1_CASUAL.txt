@@ -1,0 +1,359 @@
+# =========================================================================
+# PLAN COMPLETO DE SERVIDOR - OPCIÓN 1: "SERVIDOR CASUAL FRIENDLY"
+# =========================================================================
+# Perfil: Servidor Mid-Rate x5 orientado a jugadores casuales y nuevos
+# Objetivo: Comunidad estable, economía sana, PvE/PvP balanceado
+# Ideal para: Jugadores que trabajan, familias, comunidad relajada
+# =========================================================================
+
+## 🎯 FILOSOFÍA DEL SERVIDOR
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Accesible para nuevos jugadores de Lineage 2
+• No requiere 12 horas diarias de juego para competir
+• Enfoque en comunidad y cooperación (party/clan)
+• PvP opcional pero incentivado
+• Sistema de protección anti-bot y anti-cheat activo
+• Economía estable y balanceada a largo plazo
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+## ⚙️ CONFIGURACIONES PRINCIPALES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+### 📊 RATES (config/Rates.ini)
+--------------------------------------------------
+✓ YA CONFIGURADO:
+  • RateXp = 5
+  • RateSp = 5
+  • RatePartyXp = 5
+  • RatePartySp = 5
+  • Adena = x3 cantidad, x1.5 chance
+  • Drops = x2.5 cantidad, x1.5 chance
+  • Spoil = x3 cantidad, x1.5 chance
+  • Quest EXP/SP = x5
+  • Quest Adena = x3
+  • Quest Items = x3
+  • Raids = x1.5 cantidad, x1.2 chance
+  • Vitalidad: Habilitada con multiplicadores balanceados
+
+### 👥 SISTEMA DUALBOX (config/Custom/DualboxCheck.ini)
+--------------------------------------------------
+CONFIGURACIÓN RECOMENDADA:
+  DualboxCheckMaxPlayersPerIP = 3
+  DualboxCheckMaxOlympiadParticipantsPerIP = 1
+  DualboxCheckMaxL2EventParticipantsPerIP = 1
+  DualboxCheckMaxOfflinePlayPerIP = 2
+  DualboxCountOfflineTraders = False
+
+JUSTIFICACIÓN:
+  • 3 cuentas por IP permite jugar con buffer/spoiler
+  • 1 en Olympiad evita abusos
+  • 1 en eventos mantiene competencia justa
+  • 2 offline para shop y farmer
+
+### 🛒 OFFLINE TRADE (config/Custom/OfflineTrade.ini)
+--------------------------------------------------
+CONFIGURACIÓN RECOMENDADA:
+  OfflineTradeEnable = True
+  OfflineCraftEnable = True
+  OfflineModeInPeaceZone = True
+  OfflineModeNoDamage = True
+  RestoreOffliners = True
+  OfflineMaxDays = 7
+  OfflineDisconnectFinished = True
+  StoreOfflineTradeInRealtime = True
+  EnableOfflineCommand = True
+
+JUSTIFICACIÓN:
+  • Jugadores casuales necesitan vender mientras trabajan/duermen
+  • 7 días máximo mantiene economía activa
+  • Auto-disconnect al terminar libera recursos
+
+### 🤖 AUTO PLAY (config/Custom/AutoPlay.ini)
+--------------------------------------------------
+CONFIGURACIÓN RECOMENDADA:
+  EnableAutoPlay = True
+  EnableAutoPotion = True
+  EnableAutoSkill = True
+  ResumeAutoPlay = False
+  AssistLeader = True
+  AutoPlayPremium = False
+
+JUSTIFICACIÓN:
+  • Feature retail que jugadores esperan
+  • No exclusivo para premium mantiene igualdad
+  • Assist leader fomenta party play
+  • No resume auto evita AFK 24/7
+
+### ⚔️ PVP SETTINGS (config/PVP.ini)
+--------------------------------------------------
+CONFIGURACIÓN RECOMENDADA:
+  AntiFeedEnable = True
+  AntiFeedDualbox = True
+  AntiFeedInterval = 120
+  AwardPKKillPVPPoint = False
+  MinimumPKRequiredToDrop = 5
+
+JUSTIFICACIÓN:
+  • Anti-feed evita farm de PvP points
+  • PK controlado para no castigar mucho
+  • Mantiene balance entre PvP y PK
+
+### 🏛️ OLYMPIAD (config/Olympiad.ini)
+--------------------------------------------------
+CONFIGURACIÓN RECOMENDADA:
+  OlympiadEnabled = True
+  OlympiadStartTime = 18
+  OlympiadCPeriod = 21600000 (6 horas)
+  OlympiadClassedParticipants = 5
+  OlympiadNonClassedParticipants = 9
+  OlympiadEnchantLimit = 6
+
+JUSTIFICACIÓN:
+  • Horario 6pm-12am cubre jugadores de trabajo
+  • Enchant limit +6 evita pay-to-win extremo
+  • Mantiene competencia balanceada
+
+### 🏰 SIEGE (config/Siege.ini)
+--------------------------------------------------
+CONFIGURACIÓN RECOMENDADA:
+  SiegeCycle = 2 (cada 2 semanas)
+  SiegeLength = 120 (2 horas)
+  SiegeClanMinLevel = 5
+  MaxFlags = 1
+
+JUSTIFICACIÓN:
+  • 2 semanas da tiempo para prepararse
+  • 2 horas de siege es manejable
+  • Level 5 clan es alcanzable pero requiere esfuerzo
+
+### 👤 CHARACTER (config/Character.ini)
+--------------------------------------------------
+CONFIGURACIÓN RECOMENDADA:
+  Delevel = True
+  AutoLearnSkills = False
+  AutoLearnDivineInspiration = False
+  EnableVitality = True ✓ (YA CONFIGURADO)
+  MaxBuffAmount = 24 (+4 con Divine)
+  MaxDanceAmount = 12
+  AltStoreDances = True
+  DeathPenaltyChance = 15
+
+JUSTIFICACIÓN:
+  • No auto-learn mantiene experiencia clásica
+  • 24 buffs (+4 divine = 28 total) es generoso
+  • Dances saved on logout ayuda a casuales
+  • Death penalty 15% en vez de 20% es más casual-friendly
+
+### 🎮 GENERAL FEATURES (config/General.ini)
+--------------------------------------------------
+CONFIGURACIÓN RECOMENDADA:
+  HtmCache = True
+  DestroyPlayerDroppedItem = True
+  DestroyEquipableItem = False
+  AutoDestroyDroppedItemAfter = 300 (5 min)
+  SaveDroppedItem = False
+  MultipleItemDrop = True
+
+JUSTIFICACIÓN:
+  • HtmCache mejora performance
+  • Destroy items basura limpia mundo
+  • No destroy equippables protege errores de jugadores
+  • 5 minutos es suficiente para recoger
+
+### 🛡️ NPC STATS (config/Custom/NpcStatMultipliers.ini)
+--------------------------------------------------
+CONFIGURACIÓN RECOMENDADA:
+  EnableNpcStatMultipliers = False
+
+JUSTIFICACIÓN:
+  • Con rates x5 XP, no necesitas aumentar dificultad de mobs
+  • Mantiene balance retail de combate
+
+### 💎 PREMIUM SYSTEM (config/Custom/PremiumSystem.ini)
+--------------------------------------------------
+CONFIGURACIÓN RECOMENDADA:
+  EnablePremiumSystem = True
+  PremiumRateXp = 1.5 (total x7.5 con server x5)
+  PremiumRateSp = 1.5
+  PremiumRateDropChance = 1.2
+  PremiumRateDropAmount = 1.5
+  PremiumRateSpoilChance = 1.2
+  PremiumRateSpoilAmount = 1.5
+
+JUSTIFICACIÓN:
+  • Premium moderado da ventaja sin ser pay-to-win
+  • x7.5 total XP para premium es competitivo pero no roto
+  • Genera ingresos para mantener servidor
+
+## 🎁 FEATURES ADICIONALES RECOMENDADAS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+### ✅ HABILITAR:
+  1. Offline Trade (✓ configurado arriba)
+  2. Auto Play (✓ configurado arriba)
+  3. Sistema de Vitalidad (✓ ya habilitado)
+  4. Scheme Buffer (NPC que guarda sets de buffs)
+  5. Wedding System (contenido social)
+  6. Community Board (info, teleports, etc)
+  7. Starting Location Choice (elegir ciudad inicial)
+  8. Random Spawns (anti-bot)
+
+### ❌ MANTENER DESHABILITADO:
+  1. NoblessMaster (auto-noble rompe progresión)
+  2. Class Master (auto-class muy easy)
+  3. FakePlayers (mejor comunidad real)
+  4. Custom Items OP
+  5. Banking System (puede romper economía)
+
+## 📋 CHECKLIST DE IMPLEMENTACIÓN
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+### FASE 1: CONFIGURACIÓN BASE (YA COMPLETADA ✓)
+  [✓] Rates x5 configurados
+  [✓] Vitalidad habilitada y balanceada
+  [✓] Raid respawn ajustado
+  [✓] Adena x3 para economía estable
+
+### FASE 2: CONFIGURACIONES DE CALIDAD DE VIDA
+  [ ] Configurar Dualbox Check (3 cuentas)
+  [ ] Configurar Offline Trade (7 días max)
+  [ ] Habilitar Auto Play
+  [ ] Configurar Premium System
+  [ ] Ajustar Character settings
+
+### FASE 3: BALANCE PVP/PVE
+  [ ] Configurar Olympiad (enchant limit +6)
+  [ ] Configurar Anti-Feed
+  [ ] Configurar Siege settings
+  [ ] Ajustar PK penalties
+
+### FASE 4: OPTIMIZACIÓN Y SEGURIDAD
+  [ ] Habilitar HtmCache
+  [ ] Configurar auto-destroy items
+  [ ] Revisar FloodProtectors
+  [ ] Configurar backups automáticos
+  [ ] Testing exhaustivo
+
+### FASE 5: FEATURES CUSTOM
+  [ ] Habilitar Scheme Buffer
+  [ ] Configurar Community Board
+  [ ] Habilitar Wedding System
+  [ ] Configurar Starting Location
+  [ ] Random Spawns anti-bot
+
+## 💰 MODELO DE MONETIZACIÓN SUGERIDO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+### PREMIUM BENEFITS (Precio sugerido: $10-15/mes)
+  • EXP/SP +50% (x7.5 total)
+  • Drop +50% cantidad, +20% chance
+  • Spoil +50% cantidad, +20% chance
+  • +1 ventana offline adicional
+  • Acceso a special teleports
+  • Color de nombre especial
+  • Warehouse slots adicionales
+
+### DONATION SHOP (NO PAY-TO-WIN)
+  ✓ PERMITIDO:
+    • Cosmetics (visual armor, weapons)
+    • Name/Clan name color
+    • Warehouse expansion
+    • Skill animation change
+    • Pet skins
+    • XP/SP scrolls (time-limited)
+
+  ❌ PROHIBIDO:
+    • Weapons/Armors +16
+    • Epic jewelry
+    • Instant level 80
+    • God items
+    • Anything que rompa balance
+
+## 🎯 MÉTRICAS DE ÉXITO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+### MES 1:
+  • 100-200 jugadores activos
+  • 20+ clans formados
+  • Economía funcionando (shops, trades)
+  • Zero exploits/dupes detectados
+
+### MES 3:
+  • 200-400 jugadores activos
+  • Primer castle siege exitoso
+  • Olympiad con 50+ participantes
+  • 15-20% Premium conversion rate
+
+### MES 6:
+  • 300-500+ jugadores activos
+  • Comunidad estable y activa
+  • Events regulares con participación
+  • Server rentable y sostenible
+
+## 🔧 MANTENIMIENTO RECOMENDADO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+### DIARIO:
+  • Monitorear logs de errores
+  • Revisar reportes de bugs/exploits
+  • Responder tickets de soporte
+  • Presencia GM en juego (1-2 horas)
+
+### SEMANAL:
+  • Backup completo de database
+  • Revisar economía (inflación, precios)
+  • Analizar métricas de jugadores
+  • Eventos programados
+
+### MENSUAL:
+  • Actualizar core/datapack
+  • Revisar y ajustar rates si necesario
+  • Encuestas a jugadores
+  • Eventos especiales grandes
+
+## ✅ VENTAJAS DE ESTA CONFIGURACIÓN
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✓ Rates x5 permite progresar sin dedicar vida entera
+✓ Economía x3 Adena mantiene balance a largo plazo
+✓ 3 dualbox permite self-buff sin abusos
+✓ Offline trade esencial para casuales
+✓ Auto play es feature retail esperado
+✓ Olympiad enchant limit evita super-gears
+✓ Premium balanceado genera ingresos sin ser P2W
+✓ Anti-feed y protecciones contra exploits
+✓ Vitalidad ayuda a nuevos y alts
+✓ Party play incentivado con assist leader
+
+## ⚠️ PRECAUCIONES Y CONSIDERACIONES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⚠️ Monitorear inflación de Adena primeros meses
+⚠️ Ajustar dualbox si detectas abusos
+⚠️ No cambiar rates dramáticamente después de launch
+⚠️ Mantener comunicación transparente con comunidad
+⚠️ Zero tolerancia con bots y exploits
+⚠️ GMs deben ser imparciales y profesionales
+⚠️ Backups diarios automáticos son CRÍTICOS
+
+## 📞 RESUMEN EJECUTIVO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+OPCIÓN 1 es ideal si buscas:
+  • Servidor familiar y casual-friendly
+  • Comunidad estable a largo plazo
+  • Balance entre PvE y PvP
+  • Economía sana y duradera
+  • Jugadores que no dedican 12h diarias
+  • Ambiente relajado pero competitivo
+
+TIPO DE JUGADOR: Trabajadores, familias, casuales, veteranos cansados de grind extremo
+
+LONGEVIDAD ESPERADA: 1-2+ años con comunidad leal
+
+DIFICULTAD GESTIÓN: Media (requiere monitoreo pero no 24/7)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# FIN OPCIÓN 1
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+

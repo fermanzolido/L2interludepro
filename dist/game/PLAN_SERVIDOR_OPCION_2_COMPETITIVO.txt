@@ -1,0 +1,498 @@
+# =========================================================================
+# PLAN COMPLETO DE SERVIDOR - OPCIÓN 2: "SERVIDOR COMPETITIVO HARDCORE"
+# =========================================================================
+# Perfil: Servidor Mid-Rate x5 orientado a jugadores experimentados
+# Objetivo: PvP intenso, economía player-driven, competencia clan vs clan
+# Ideal para: Veteranos L2, clanes organizados, jugadores hardcore
+# =========================================================================
+
+## 🎯 FILOSOFÍA DEL SERVIDOR
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• PvP como foco principal del endgame
+• Economía 100% player-driven (sin NPCs vendiendo todo)
+• Clan wars y territory control son el corazón del servidor
+• Sistema de clases balanceado sin shortcuts
+• Zero tolerancia con bots, hacks y exploits
+• Competencia real por recursos y raid bosses
+• Sistema de ranks y leaderboards
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+## ⚙️ CONFIGURACIONES PRINCIPALES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+### 📊 RATES (config/Rates.ini)
+--------------------------------------------------
+✓ YA CONFIGURADO (BASE):
+  • RateXp = 5
+  • RateSp = 5
+  • RatePartyXp = 5 (AJUSTAR A 6 para fomentar parties)
+  • RatePartySp = 5 (AJUSTAR A 6)
+  • Adena = x3 cantidad, x1.5 chance
+  • Drops = x2.5 cantidad, x1.5 chance
+  • Spoil = x3 cantidad, x1.5 chance
+
+🔧 AJUSTES ADICIONALES RECOMENDADOS:
+  • RatePartyXp = 6 (20% bonus en party)
+  • RatePartySp = 6
+  • RateKarmaLost = -1 (más difícil bajar karma)
+  • RateVitalityGain = 0.8 (más lento, menos casual)
+  • RateVitalityLost = 0.8 (se mantiene más)
+  • DeathPenaltyChance = 25 (más castigo por morir)
+
+JUSTIFICACIÓN:
+  • Bonus party 20% incentiva juego organizado
+  • Karma difícil de bajar penaliza PKs sin sentido
+  • Vitalidad más lenta evita abuse
+  • Death penalty más alto aumenta stakes en PvP
+
+### 👥 SISTEMA DUALBOX (config/Custom/DualboxCheck.ini)
+--------------------------------------------------
+CONFIGURACIÓN RECOMENDADA (MÁS RESTRICTIVA):
+  DualboxCheckMaxPlayersPerIP = 2
+  DualboxCheckMaxOlympiadParticipantsPerIP = 1
+  DualboxCheckMaxL2EventParticipantsPerIP = 1
+  DualboxCheckMaxOfflinePlayPerIP = 1
+  DualboxCountOfflineTraders = False
+
+JUSTIFICACIÓN:
+  • 2 cuentas max (main + support) fuerza interacción
+  • 1 offline trade mantiene mercado competitivo
+  • Jugadores dependen más de clan/party
+  • Menos bots farming con múltiples ventanas
+
+### 🛒 OFFLINE TRADE (config/Custom/OfflineTrade.ini)
+--------------------------------------------------
+CONFIGURACIÓN RECOMENDADA:
+  OfflineTradeEnable = True
+  OfflineCraftEnable = True
+  OfflineModeInPeaceZone = True
+  OfflineModeNoDamage = True
+  RestoreOffliners = True
+  OfflineMaxDays = 3
+  OfflineDisconnectFinished = True
+  StoreOfflineTradeInRealtime = True
+  EnableOfflineCommand = True
+
+JUSTIFICACIÓN:
+  • Solo 3 días mantiene mercado dinámico
+  • Shops inactivos se desconectan
+  • Economía más competitiva
+
+### 🤖 AUTO PLAY (config/Custom/AutoPlay.ini)
+--------------------------------------------------
+CONFIGURACIÓN RECOMENDADA (RESTRICTIVA):
+  EnableAutoPlay = True
+  EnableAutoPotion = True
+  EnableAutoSkill = True
+  ResumeAutoPlay = False
+  AssistLeader = True
+  AutoPlayPremium = True
+
+JUSTIFICACIÓN:
+  • Solo premium para auto-play genera ingresos
+  • Fuerza a free players a jugar activamente
+  • Reduce bots AFK farming
+  • Premium se vuelve más valioso
+
+### ⚔️ PVP SETTINGS (config/PVP.ini)
+--------------------------------------------------
+CONFIGURACIÓN RECOMENDADA (PVP INTENSO):
+  AntiFeedEnable = True
+  AntiFeedDualbox = True
+  AntiFeedInterval = 180 (3 minutos más estricto)
+  AwardPKKillPVPPoint = True
+  MinimumPKRequiredToDrop = 4
+  PlayerRateDrop = 5 (5% chance drop on death)
+  PlayerRateDropItem = 3 (3% drop item)
+  KarmaRateDrop = 50 (50% con karma)
+
+JUSTIFICACIÓN:
+  • Matar PKs da PvP point incentiva cazarlos
+  • PK 4+ empieza a dropear (menos que retail)
+  • 5% drop on death aumenta stakes de PvP
+  • Karma 50% drop es castigo real
+
+### 🏛️ OLYMPIAD (config/Olympiad.ini)
+--------------------------------------------------
+CONFIGURACIÓN RECOMENDADA (COMPETITIVA):
+  OlympiadEnabled = True
+  OlympiadStartTime = 20 (8pm-2am para hardcore)
+  OlympiadCPeriod = 21600000 (6 horas)
+  OlympiadClassedParticipants = 9
+  OlympiadNonClassedParticipants = 11
+  OlympiadEnchantLimit = 8
+  OlympiadStartPoints = 10 (menos inicial)
+  OlympiadWeeklyPoints = 2 (menos bonus)
+
+JUSTIFICACIÓN:
+  • Horario nocturno para jugadores dedicados
+  • Más participantes requeridos = más competitivo
+  • Enchant +8 permite gear pero no extremo
+  • Menos puntos gratis, más por wins
+
+### 🏰 SIEGE (config/Siege.ini)
+--------------------------------------------------
+CONFIGURACIÓN RECOMENDADA:
+  SiegeCycle = 1 (cada semana!)
+  SiegeLength = 120 (2 horas)
+  SiegeClanMinLevel = 6
+  MaxFlags = 2 (permite más estrategia)
+  BloodAllianceReward = 3 (reward defend)
+
+JUSTIFICACIÓN:
+  • Siege semanal mantiene territorio relevante
+  • Level 6 clan es serio, no casual
+  • 2 flags permite más táctica
+  • Reward defender incentiva defensa
+
+### 👤 CHARACTER (config/Character.ini)
+--------------------------------------------------
+CONFIGURACIÓN RECOMENDADA (HARDCORE):
+  Delevel = True
+  AutoLearnSkills = False
+  AutoLearnDivineInspiration = False
+  EnableVitality = True (pero rates reducidos arriba)
+  MaxBuffAmount = 20 (retail-like)
+  MaxDanceAmount = 12
+  AltStoreDances = False
+  DeathPenaltyChance = 25
+  AltGameSkillLearn = False
+  AltSubClassWithoutQuests = False
+  RespawnRestoreHP = 50 (menos que 65)
+  HpRegenMultiplier = 90 (ligeramente más lento)
+  MpRegenMultiplier = 90
+
+JUSTIFICACIÓN:
+  • No auto-learn mantiene progresión clásica
+  • 20 buffs es retail estándar
+  • No store dances = buffers más valiosos
+  • Death penalty 25% aumenta consecuencias
+  • Subclass con quests mantiene dificultad
+  • HP/MP regen más lento = más skillfull gameplay
+
+### 🎮 GENERAL FEATURES (config/General.ini)
+--------------------------------------------------
+CONFIGURACIÓN RECOMENDADA:
+  HtmCache = True
+  DestroyPlayerDroppedItem = True
+  DestroyEquipableItem = False
+  AutoDestroyDroppedItemAfter = 180 (3 min)
+  SaveDroppedItem = False
+  MultipleItemDrop = True
+
+JUSTIFICACIÓN:
+  • 3 minutos para recoger items crea presión
+  • Performance optimizada
+
+### 🛡️ NPC STATS (config/Custom/NpcStatMultipliers.ini)
+--------------------------------------------------
+CONFIGURACIÓN RECOMENDADA:
+  EnableNpcStatMultipliers = True
+  MonsterHP = 1.2 (20% más HP)
+  MonsterPAtk = 1.1 (10% más daño)
+  MonsterMAtk = 1.1
+  RaidbossHP = 1.3 (30% más HP)
+  RaidbossPAtk = 1.15
+  RaidbossMAtk = 1.15
+
+JUSTIFICACIÓN:
+  • Mobs más difíciles = farming más desafiante
+  • Raids más difíciles = requiere organización
+  • Compensa rates x5 XP
+  • Fomenta party play incluso en farm
+
+### 💎 PREMIUM SYSTEM (config/Custom/PremiumSystem.ini)
+--------------------------------------------------
+CONFIGURACIÓN RECOMENDADA:
+  EnablePremiumSystem = True
+  PremiumRateXp = 1.3 (x6.5 total)
+  PremiumRateSp = 1.3
+  PremiumRateDropChance = 1.1
+  PremiumRateDropAmount = 1.3
+  PremiumRateSpoilChance = 1.1
+  PremiumRateSpoilAmount = 1.3
+
+BENEFICIOS PREMIUM ADICIONALES:
+  • Auto Play habilitado
+  • +1 dualbox (3 total)
+  • Priority queue en siege
+  • Special teleports
+  • Warehouse expansion
+
+JUSTIFICACIÓN:
+  • Premium moderado pero valioso
+  • Auto play exclusivo es gran incentivo
+  • x6.5 vs x5 no es pay-to-win extremo
+  • Genera ingresos sin romper balance
+
+## 🎁 FEATURES CUSTOM RECOMENDADAS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+### ✅ HABILITAR:
+  1. Offline Trade (limitado a 3 días)
+  2. Auto Play (solo Premium)
+  3. Sistema de Vitalidad (rates reducidos)
+  4. PvP Announcements (killstreaks, etc)
+  5. Clan Reputation System mejorado
+  6. Territory Control System
+  7. Ranking System (PvP, Olympiad, Clan Wars)
+  8. Anti-Bot Captcha System
+  9. Walker Bot Protection (CRÍTICO)
+  10. Champion Monsters (extra challenge)
+
+### ✅ CUSTOM IMPLEMENTATIONS:
+  1. **Clan War System Mejorado**:
+     • Wars declarables con stakes (Adena/Items)
+     • Territory control con rewards
+     • War score leaderboard
+  
+  2. **Raid Boss Competition**:
+     • Announcements de spawn
+     • No safe zones cerca
+     • Kill credit a clan que más daño hizo
+  
+  3. **Karma System Modificado**:
+     • Zonas sin karma penalty (PvP zones)
+     • Karma bounty system (reward por matar PKs)
+  
+  4. **Economy Balancing**:
+     • Dynamic taxes en shops
+     • Castle owners control taxes
+     • Clan halls dan bonuses de craft
+
+### ❌ MANTENER DESHABILITADO:
+  1. Class Master (rompe progresión)
+  2. Nobless Master
+  3. Fake Players
+  4. Banking System
+  5. Custom super items
+  6. Auto-potions gratuitas
+
+## 📋 CHECKLIST DE IMPLEMENTACIÓN
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+### FASE 1: CONFIGURACIÓN BASE (PARCIALMENTE COMPLETADA)
+  [✓] Rates x5 configurados
+  [✓] Vitalidad habilitada
+  [✓] Raid respawn ajustado
+  [ ] Ajustar Party XP bonus a x6
+  [ ] Ajustar death penalty a 25%
+  [ ] Configurar vitalidad rates más lentos
+
+### FASE 2: CONFIGURACIONES PVP/COMPETITIVAS
+  [ ] Configurar Dualbox Check (2 cuentas)
+  [ ] Configurar Offline Trade (3 días max)
+  [ ] Auto Play solo Premium
+  [ ] Configurar PvP drops y karma
+  [ ] Habilitar NPC stat multipliers
+
+### FASE 3: OLYMPIAD Y SIEGE
+  [ ] Olympiad enchant limit +8
+  [ ] Siege semanal
+  [ ] Aumentar requisitos participación
+  [ ] Configurar rewards
+
+### FASE 4: SISTEMAS ANTI-CHEAT
+  [ ] Habilitar Walker Bot Protection
+  [ ] Configurar Captcha System
+  [ ] Random Spawns
+  [ ] GM monitoring tools
+  [ ] Log systems comprehensivos
+
+### FASE 5: FEATURES COMPETITIVE
+  [ ] Ranking Systems
+  [ ] PvP Announcements
+  [ ] Improved Clan War System
+  [ ] Territory Control
+  [ ] Champion Monsters
+
+### FASE 6: OPTIMIZACIÓN
+  [ ] HtmCache enabled
+  [ ] Performance tuning
+  [ ] Database optimization
+  [ ] Backup automation
+  [ ] Stress testing
+
+## 💰 MODELO DE MONETIZACIÓN AGRESIVO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+### PREMIUM ACCOUNT (Precio: $15-20/mes)
+  • EXP/SP +30% (x6.5 total vs x5)
+  • Drop +30% cantidad, +10% chance
+  • **AUTO PLAY ENABLED** (BIG SELLING POINT)
+  • +1 Dualbox (3 total)
+  • Priority queue (login/siege)
+  • Special teleports
+  • Warehouse expansion
+  • No-trade name/clan color
+
+### VIP ACCOUNT (Precio: $30-40/mes)
+  • Todo Premium +
+  • EXP/SP +50% (x7.5 total)
+  • Drop +50% cantidad, +20% chance
+  • +2 Dualbox (4 total)
+  • Private GM support
+  • Exclusive VIP zone con farming
+  • Special VIP events
+  • Appearance customization
+
+### DONATION SHOP (BALANCED)
+  ✓ TIER 1 - CONVENIENCIA ($5-20):
+    • XP/SP scrolls (1-7 días)
+    • Drop scrolls
+    • Appearance items
+    • Name changes
+    • Clan emblem custom
+  
+  ✓ TIER 2 - PROGRESSION ($20-50):
+    • Enchant scrolls (max +6)
+    • Blessed scrolls
+    • Soul crystals
+    • Premium potions
+    • Special dyes
+  
+  ❌ PROHIBIDO:
+    • Weapons/Armors directamente
+    • Epic jewelry
+    • Instant levels
+    • +16 items
+    • God mode items
+
+## 🏆 SISTEMAS DE COMPETENCIA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+### 1. PVP RANKING SYSTEM
+  • Top 100 PvPers (semanal/mensual)
+  • Rewards:
+    - Top 10: Special titles + items
+    - Top 3: Unique appearance
+    - #1: Exclusive mount/pet skin
+
+### 2. CLAN RANKING SYSTEM
+  • Basado en:
+    - Castle ownership
+    - Clan wars won
+    - Territory controlled
+    - Raid bosses killed
+    - Olympiad heroes
+  • Rewards:
+    - Top clans get special buffs
+    - Clan hall discounts
+    - Territory taxes
+
+### 3. OLYMPIAD HEROES
+  • Mantener sistema retail
+  • Heroes get:
+    - Aura
+    - Skills
+    - Weapons
+    - Title
+    - Recognition
+
+### 4. RAID BOSS COMPETITION
+  • Leaderboard de raid kills
+  • First kill bonuses
+  • Clan que más raids mata del mes:
+    - Special rewards
+    - Recognition
+    - Bonuses
+
+## 🎯 MÉTRICAS DE ÉXITO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+### MES 1:
+  • 150-300 jugadores activos
+  • 10-15 clans serios (30+ members)
+  • Primera siege war con 200+ participantes
+  • Economía funcionando
+  • 25%+ premium conversion
+
+### MES 3:
+  • 300-500 jugadores activos
+  • Clan wars activas 24/7
+  • Olympiad competitivo (100+ participantes)
+  • Territory control establecido
+  • 30%+ premium/VIP conversion
+
+### MES 6:
+  • 400-700+ jugadores activos
+  • Meta establecido y balanceado
+  • Eventos custom exitosos
+  • Comunidad hardcore leal
+  • Server rentable y sostenible
+
+## 🔧 MANTENIMIENTO INTENSIVO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+### DIARIO (CRÍTICO):
+  • Monitorear logs 2-3 veces al día
+  • Revisar reportes de hacks/exploits
+  • Ban waves de bots
+  • GM presence en sieges/raids
+  • Responder tickets urgentes (<2h)
+
+### SEMANAL:
+  • Backup completo database
+  • Analizar economía y ajustar
+  • Review de clan wars y conflicts
+  • Balance patches si necesario
+  • GM-run events
+
+### MENSUAL:
+  • Core/datapack updates
+  • Community feedback sessions
+  • Major balance adjustments
+  • Big events (tournaments, etc)
+  • Financial review
+
+## ✅ VENTAJAS DE ESTA CONFIGURACIÓN
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✓ PvP intenso con consecuencias reales (drops)
+✓ Economía player-driven más inmersiva
+✓ Clan wars y territory control da propósito
+✓ 2 dualbox fuerza interdependencia
+✓ Auto play premium genera ingresos
+✓ Mobs más difíciles = desafío real
+✓ Siege semanal mantiene competencia
+✓ Olympiad +8 enchant más competitivo
+✓ Sistema de ranking motiva competencia
+✓ Zero tolerance con bots mantiene calidad
+✓ Premium valioso sin ser mandatory
+
+## ⚠️ DESAFÍOS Y CONSIDERACIONES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⚠️ Requiere GMs activos 24/7 (turnos rotativos)
+⚠️ Community management intensivo
+⚠️ Balance patches frecuentes necesarios
+⚠️ Mayor riesgo de drama y conflicts
+⚠️ Más susceptible a clan dominance
+⚠️ Necesita anti-cheat robusto
+⚠️ Puede ser intimidante para nuevos
+⚠️ Requiere inversión en anti-DDoS
+⚠️ Backups críticos por posibles exploits
+
+## 📞 RESUMEN EJECUTIVO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+OPCIÓN 2 es ideal si buscas:
+  • Servidor hardcore competitivo
+  • PvP como endgame principal
+  • Clan wars y territory control
+  • Economía player-driven
+  • Comunidad dedicada y activa
+  • Mayor monetización potencial
+
+TIPO DE JUGADOR: Veteranos L2, hardcore gamers, clanes organizados, competitivos
+
+LONGEVIDAD ESPERADA: 6-18 meses (alta intensidad, eventualmente burnout)
+
+DIFICULTAD GESTIÓN: Alta (requiere GM team dedicado y monitoring 24/7)
+
+REVENUE POTENTIAL: Alto (premium/VIP más valiosos, donation shop)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# FIN OPCIÓN 2
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+

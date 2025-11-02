@@ -1,0 +1,19 @@
+2025.11.01 19:18:50,640	INFO	1	org.l2jmobius.commons.database.DatabaseFactory	Database: HikariCP pool initialized successfully.
+2025.11.01 19:18:50,916	INFO	1	org.l2jmobius.commons.database.DatabaseFactory	Database: Initialized with a valid connection.
+2025.11.01 19:18:50,926	INFO	1	org.l2jmobius.commons.threads.ThreadPool	ThreadPool: Initialized
+2025.11.01 19:18:50,928	INFO	1	org.l2jmobius.commons.threads.ThreadPool	...scheduled pool executor with 2 total threads.
+2025.11.01 19:18:50,928	INFO	1	org.l2jmobius.commons.threads.ThreadPool	...instant pool executor with 2 total threads.
+2025.11.01 19:18:50,930	INFO	1	org.l2jmobius.loginserver.LoginController	Loading LoginController...
+2025.11.01 19:18:51,275	INFO	1	org.l2jmobius.loginserver.LoginController	Cached 10 KeyPairs for RSA communication.
+2025.11.01 19:18:51,318	INFO	1	org.l2jmobius.loginserver.LoginController	Stored 20 keys for Blowfish communication.
+2025.11.01 19:18:51,395	INFO	1	org.l2jmobius.loginserver.GameServerTable	Loaded 127 server names.
+2025.11.01 19:18:51,431	INFO	1	org.l2jmobius.loginserver.GameServerTable	Loaded 1 registered Game Servers.
+2025.11.01 19:18:51,473	INFO	1	org.l2jmobius.loginserver.GameServerTable	Cached 10 RSA keys for Game Server communication.
+2025.11.01 19:18:51,475	INFO	1	org.l2jmobius.loginserver.LoginServer	Loaded 2 IP Bans.
+2025.11.01 19:18:51,476	INFO	1	org.l2jmobius.loginserver.LoginServer	Listening for GameServers on 127.0.0.1:9014
+2025.11.01 19:18:51,492	INFO	1	org.l2jmobius.loginserver.LoginServer	LoginServer: is now listening on: 0.0.0.0:2106
+2025.11.01 19:19:14,657	INFO	46	org.l2jmobius.loginserver.GameServerThread	Updated Gameserver [2] Sieghardt IP's:
+2025.11.01 19:19:14,658	INFO	46	org.l2jmobius.loginserver.GameServerThread	10.10.10.122/10.10.10.0/24
+2025.11.01 19:19:14,659	INFO	46	org.l2jmobius.loginserver.GameServerThread	127.0.0.1/127.0.0.0/8
+2025.11.01 19:19:14,659	INFO	46	org.l2jmobius.loginserver.GameServerThread	190.57.223.171/0.0.0.0/0
+2025.11.01 19:23:11,095	INFO	52	org.l2jmobius.loginserver.LoginController	Auto created account 'admin'.

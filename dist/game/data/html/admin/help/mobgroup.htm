@@ -1,0 +1,36 @@
+<html><title>Menú de Control de Grupos de Monstruos</title><body>
+<center>
+<table width=260>
+<tr>
+<td width=40><button value="Principal" action="bypass admin_admin" width=45 height=15 back="sek.cbui94" fore="sek.cbui92"></td>
+<td width=180><center><font color="LEVEL"><a action="bypass admin_help">Menú de Ayuda</a></font></center></td>
+<td width=40><button value="Atrás" action="bypass admin_mobmenu" width=45 height=15 back="sek.cbui94" fore="sek.cbui92"></td>
+</tr>
+</table><br>
+</center>
+<font color="LEVEL">//mobgroup_create</font> [idGrupo] [idNpc] [número]<br>
+Crea un grupo con [número] de monstruos de tipo [idNpc], en el grupo [idGrupo].<br>
+No hay ningún efecto visual al usar este comando, y los miembros de este grupo deben ser generados para activarse.<br><br>
+<font color="LEVEL">//mobgroup_remove</font> [idGrupo]<br>
+Elimina/borra el grupo [idGrupo], desapareciendo posteriormente a cualquier miembro del grupo que aún esté vivo.<br><br>
+<font color="LEVEL">//mobgroup_spawn</font> [idGrupo] [locx] [locy] [locz]<br>
+Genera a los miembros del grupo [idGrupo]. Si no se especifica una ubicación, el grupo se generará alrededor del GM.<br>
+Por defecto, los monstruos están en un estado inactivo y esperan más comandos.<br>
+<font color="LEVEL">//mobgroup_unspawn</font> [idGrupo]<br>
+Desaparece a los miembros del grupo [idGrupo]. El grupo no se elimina y puede ser invocado usando //mobgroup_spawn una vez más.<br>
+<font color="LEVEL">//mobgroup_list</font> ([idGrupo])<br>
+Lista todos los grupos de monstruos creados. Si se especifica [idGrupo], se muestra una lista de los miembros de ese grupo.<br>
+<img src="L2UI.SquareGray" width="200" height="1"><br>
+<font color="999999">Otros Comandos</font><br>
+<font color="LEVEL">//mobgroup_follow</font> [idGrupo] - El grupo [idGrupo] seguirá al GM.<br>
+<font color="LEVEL">//mobgroup_return</font> [idGrupo] - El grupo [idGrupo] volverá al GM.<br>
+<font color="LEVEL">//mobgroup_teleport</font> [idGrupo] ([nombreJugador]) - El grupo [idGrupo] será teletransportado y seguirá al jugador especificado (o al GM si no se especifica ninguno).<br>
+<font color="LEVEL">//mobgroup_attack</font> [idGrupo] - El grupo [idGrupo] atacará al objetivo actual del GM (si lo hay).<br>
+<font color="LEVEL">//mobgroup_rnd</font> [idGrupo] - El grupo [idGrupo] atacará a objetivos seleccionados al azar.<br>
+<font color="LEVEL">//mobgroup_attackgrp</font> [idGrupo1] [idGrupo2] - El grupo [idGrupo1] atacará a los miembros del [idGrupo2].<br>
+<font color="LEVEL">//mobgroup_casting</font> [idGrupo] - Los monstruos del grupo [idGrupo] solo usarán sus habilidades para atacar.<br>
+<font color="LEVEL">//mobgroup_nomove</font> [idGrupo] [on/off] - Activa/desactiva que los monstruos del grupo [idGrupo] dejen de moverse. Interesante cuando se usa con el modo de solo lanzamiento.<br>
+<font color="LEVEL">//mobgroup_invul</font> [idGrupo] [on/off] - Activa/desactiva que los monstruos del grupo [idGrupo] sean invulnerables.<br>
+<font color="LEVEL">//mobgroup_idle</font> [idGrupo] - Devuelve a los monstruos del grupo [idGrupo] a un estado inactivo (esperando).<br>
+<font color="LEVEL">//mobgroup_kill</font> [idGrupo] - Mata a todos los monstruos vivos del grupo [idGrupo].
+</body></html>

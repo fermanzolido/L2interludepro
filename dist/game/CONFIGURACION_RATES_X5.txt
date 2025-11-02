@@ -1,0 +1,183 @@
+# =========================================================================
+# CONFIGURACIÓN SERVIDOR L2J MOBIUS - RATES X5 BALANCEADOS
+# =========================================================================
+# Fecha: 01 de Noviembre de 2025
+# Configuración aplicada para mantener balance en el juego con rates x5
+# =========================================================================
+
+## ARCHIVOS MODIFICADOS:
+  1. config/Rates.ini
+  2. config/NPC.ini
+  3. config/Character.ini
+
+## =========================================================================
+## CAMBIOS EN RATES.INI
+## =========================================================================
+
+### EXPERIENCIA Y SKILL POINTS (x5)
+--------------------------------------------------
+RateXp = 5                  (antes: 1)
+RateSp = 5                  (antes: 1)
+RatePartyXp = 5             (antes: 1)
+RatePartySp = 5             (antes: 1)
+
+### MASCOTAS (x5)
+--------------------------------------------------
+PetXpRate = 5               (antes: 1)
+SinEaterXpRate = 5          (antes: 1)
+PetFoodRate = 1             (sin cambios)
+
+### QUEST REWARDS (x5 EXP/SP, x3 ADENA/ITEMS)
+--------------------------------------------------
+RateQuestRewardXP = 5       (antes: 1)
+RateQuestRewardSP = 5       (antes: 1)
+RateQuestRewardAdena = 3    (antes: 1)
+QuestItemDropAmountMultiplier = 3  (antes: 1)
+
+### DROPS DE ITEMS (BALANCEADO PARA NO SATURAR ECONOMÍA)
+--------------------------------------------------
+DeathDropAmountMultiplier = 2.5     (antes: 1)
+DeathDropChanceMultiplier = 1.5     (antes: 1)
+
+SpoilDropAmountMultiplier = 3       (antes: 1)
+SpoilDropChanceMultiplier = 1.5     (antes: 1)
+
+HerbDropAmountMultiplier = 2        (antes: 1)
+HerbDropChanceMultiplier = 1.5      (antes: 1)
+
+### RAID BOSSES (MÁS CONSERVADOR)
+--------------------------------------------------
+RaidDropAmountMultiplier = 1.5      (antes: 1)
+RaidDropChanceMultiplier = 1.2      (antes: 1)
+
+### ADENA (x3 para balance económico)
+--------------------------------------------------
+DropAmountMultiplierByItemId = 57,3  (antes: 57,1)
+DropChanceMultiplierByItemId = 57,1.5  (antes: 57,1)
+
+NOTA: Adena configurado a x3 en lugar de x5 para mantener
+      la economía balanceada y evitar inflación excesiva.
+
+### SISTEMA DE VITALIDAD (AJUSTADO PARA RATES x5)
+--------------------------------------------------
+RateVitalityLevel1 = 1.2    (antes: 1.5)
+RateVitalityLevel2 = 1.4    (antes: 2.0)
+RateVitalityLevel3 = 1.6    (antes: 2.5)
+RateVitalityLevel4 = 1.8    (antes: 3.0)
+
+NOTA: Reducido para evitar rates excesivos con vitalidad activa.
+      Con x5 base + vitalidad lvl 4 = 9x (5 * 1.8)
+      En lugar de 15x (5 * 3.0) que sería demasiado alto.
+
+## =========================================================================
+## CAMBIOS EN NPC.INI
+## =========================================================================
+
+### RAID BOSSES RESPAWN (MÁS RÁPIDO PARA COMPENSAR RATES x5)
+--------------------------------------------------
+RaidMinRespawnMultiplier = 0.6   (antes: 1.0)
+RaidMaxRespawnMultiplier = 0.6   (antes: 1.0)
+
+NOTA: Con 0.6 los raid bosses respawnean 40% más rápido.
+      Esto compensa el leveling más rápido de los jugadores.
+
+## =========================================================================
+## CAMBIOS EN CHARACTER.INI
+## =========================================================================
+
+### SISTEMA DE VITALIDAD
+--------------------------------------------------
+EnableVitality = True        (antes: False)
+
+NOTA: Sistema de vitalidad habilitado con multiplicadores ajustados.
+      Esto ayuda a nuevos jugadores y alts a nivelar más rápido.
+
+## =========================================================================
+## BALANCE Y JUSTIFICACIÓN DE LOS RATES
+## =========================================================================
+
+### FILOSOFÍA DE BALANCE:
+1. **Experiencia x5**: Permite leveling más rápido sin ser excesivo
+2. **Adena x3**: Mantiene economía saludable (no x5 para evitar inflación)
+3. **Drops x2.5-x3.5**: Balance entre cantidad (2.5x) y chance (1.5x)
+4. **Raids x1.5-x1.8**: Más conservador para mantener valor de items raid
+5. **Respawn raids x0.6**: Compensar el leveling más rápido
+
+### CÁLCULOS DE RATES EFECTIVOS:
+--------------------------------------------------
+Experiencia base: x5
+Experiencia + Vitalidad máxima: x9 (5 * 1.8)
+Party EXP: x5
+Quest EXP: x5
+
+Adena promedio: x4.5 (3.0 cantidad * 1.5 chance)
+Drops regulares promedio: x3.75 (2.5 cantidad * 1.5 chance)
+Spoil promedio: x4.5 (3.0 cantidad * 1.5 chance)
+
+Raid drops promedio: x1.8 (1.5 cantidad * 1.2 chance)
+
+### VENTAJAS DE ESTA CONFIGURACIÓN:
+--------------------------------------------------
+✓ Leveling 5x más rápido mantiene jugadores interesados
+✓ Economía estable con Adena x3 (no x5)
+✓ Drops balanceados para no saturar mercado
+✓ Raids mantienen valor sin ser imposibles de obtener
+✓ Vitalidad da boost adicional sin romper balance
+✓ Spoilers tienen buen incentivo con x3 en cantidad
+✓ Raids respawnean más rápido para población activa
+
+### CONSIDERACIONES ADICIONALES:
+--------------------------------------------------
+- Sistema Premium deshabilitado por defecto
+  (Si se habilita, multiplicará estos rates)
+  
+- Raid jewelry mantiene rate x1 para preservar valor
+
+- Karma y Death Penalties siguen ritmo de EXP
+
+- Sistema de enchant sin modificar (retail rates)
+
+## =========================================================================
+## RECOMENDACIONES PARA EL FUTURO
+## =========================================================================
+
+1. **Monitorear economía**: Si hay mucha inflación, reducir Adena a x2.5
+
+2. **Ajustar drops**: Si mercado se satura, reducir death drops a x2
+
+3. **Raids**: Si population crece, considerar reducir respawn a x0.5
+
+4. **Vitalidad**: Si leveling muy rápido, reducir multiplicadores más
+
+5. **Premium**: Si se habilita, ajustar rates premium según necesidad
+
+## =========================================================================
+## INSTRUCCIONES PARA APLICAR CAMBIOS
+## =========================================================================
+
+1. IMPORTANTE: Hacer backup de carpeta /config antes de aplicar
+
+2. Reiniciar el servidor de juego para aplicar cambios:
+   - Detener GameServer
+   - Iniciar GameServer nuevamente
+
+3. Verificar en logs que no haya errores de configuración
+
+4. Probar en juego:
+   - Matar algunos mobs y verificar EXP
+   - Verificar drops de Adena
+   - Comprobar quest rewards
+
+## =========================================================================
+## SOPORTE Y TESTING
+## =========================================================================
+
+Se recomienda realizar testing exhaustivo en ambiente de prueba antes
+de aplicar en servidor en producción con jugadores activos.
+
+Monitorear primeras 24-48 horas para detectar cualquier desbalance.
+
+## =========================================================================
+# FIN DEL DOCUMENTO
+## =========================================================================
+
