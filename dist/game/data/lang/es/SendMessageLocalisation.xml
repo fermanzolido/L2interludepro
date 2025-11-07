@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Reemplaza los mensajes del método sendMessage del jugador con texto traducido. -->
+<!-- No hay una forma elegante de hacer algo como esto. Considera usar SystemMessages apropiados donde sea posible. Mantén esta lista corta. -->
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/SendMessageLocalisation.xsd">
+	<localisation message="Entering world in Invulnerable mode." translation="Entrando al mundo en modo Invulnerable." />
+	<localisation message="Entering world in Invisible mode." translation="Entrando al mundo en modo Invisible." />
+	<localisation message="Entering world in Silence mode." translation="Entrando al mundo en modo Silencioso." />
+	<localisation message="You have learned XXX new skills." translation="Has aprendido XXX nuevas habilidades." />
+</list>
